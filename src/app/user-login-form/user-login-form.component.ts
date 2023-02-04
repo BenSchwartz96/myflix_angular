@@ -31,11 +31,11 @@ loginUser(): void {
       
      this.dialogRef.close(); // This will close the modal on success!
      console.log(result)
-     this.snackBar.open(result, 'User logged in', {
+     this.snackBar.open('User logged in', 'OK', {
         duration: 5000
      });
     }, (result) => {
-      this.snackBar.open(result, 'OK', {
+      this.snackBar.open('Unable to log in user', 'OK', {
         duration: 5000
       });
     });
