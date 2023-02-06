@@ -206,7 +206,7 @@ private handleError(error: HttpErrorResponse): any {
     } else {
     console.error(
         `Error Status code ${error.status}, ` +
-        `Error body is: ${error.error}`);
+        `Error body is: ${JSON.stringify(error.error)}`);
     }
     return throwError(
     'Something bad happened; please try again later.');
