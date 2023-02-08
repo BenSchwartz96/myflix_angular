@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { UserRegistrationService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-login-form',
@@ -17,7 +17,9 @@ export class UserLoginFormComponent {
   constructor(
     public fetchApiData: UserRegistrationService,
     public dialogRef: MatDialogRef<UserLoginFormComponent>,
-    public snackBar: MatSnackBar) { }
+    public snackBar: MatSnackBar,
+    private router: Router
+    ) { }
 
 ngOnInit(): void {
 }
@@ -34,6 +36,7 @@ loginUser(): void {
      this.snackBar.open('User logged in', 'OK', {
         duration: 5000
      });
+     this.router.navigate(['movies']);        //this points to the moviecard component (route set in app.module.ts)
     }, (result) => {
       this.snackBar.open('Unable to log in user', 'OK', {
         duration: 5000
