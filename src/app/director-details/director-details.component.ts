@@ -12,6 +12,7 @@ export class DirectorDetailsComponent {
     public director: {
       Name: string;
       Bio: string;
+      Birth: number;
     }
   ) {}
 }

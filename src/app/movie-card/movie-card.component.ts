@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 
-import { UserRegistrationService } from '../fetch-api-data.service'
+import { FetchApiDataService } from '../fetch-api-data.service'
 import { GenreDetailsComponent } from '../genre-details/genre-details.component';
 import { DirectorDetailsComponent } from '../director-details/director-details.component';
 import { MovieDetailsComponent } from '../movie-details/movie-details.component';
@@ -17,7 +17,7 @@ import { MovieDetailsComponent } from '../movie-details/movie-details.component'
 export class MovieCardComponent {
   movies: any[] = [];
   constructor(
-    public fetchApiData: UserRegistrationService,
+    public fetchApiData: FetchApiDataService,
     public dialog: MatDialog
     ) { }
 
@@ -44,11 +44,12 @@ getGenreDetails(name: string, description: string): void {
 }
 
 //function that opens director dialog
-getDirectorDetails(name: string, bio: string): void {
+getDirectorDetails(name: string, bio: string, birth: number): void {
   this.dialog.open(DirectorDetailsComponent, {
     data: {
       Name: name,
       Bio: bio,
+      Birth: birth,
     }
   });
 }
@@ -62,16 +63,6 @@ getMovieDetails(name: string, description: string): void {
     }
   });
 }
-
-
-
-  nonimplementedfunction_director(): void {
-    // this will become the function that routes you to the genreview
-  }
-
-  nonimplementedfunction_movie(): void {
-    // this will become the function that routes you to the movie details view
-  }
 
 
 

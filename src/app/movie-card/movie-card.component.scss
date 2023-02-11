@@ -1,36 +1,23 @@
 
-
 .movie-list {
   display: flex;
   flex-wrap: wrap;
   width: 80%;
   margin: auto;
+  justify-content: center;
+  padding-top: 5em;
 }
 
 .movie-card {
-  flex: 1 1 auto;
-  margin-left: 10px;
-  margin-right: 10px;
-
-  max-width: 400px;
-  max-height: 600px;
+  flex: 0 1 22%;
+  margin-left: 20px;
+  margin-bottom: 2em;
+  box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.2);
+  outline: 0.1em solid black;
+  border-radius: 10px;
 
 }
 
-// .movie-title {
-//   align-self: start;
-//   overflow-wrap: break-word;
-//   word-wrap: break-word;
-//   font-style: oblique;
-//   justify-self: flex-start;
-//   padding-left: 11%;
-//   padding-right: 11%;
-//   font-weight: 500;
-// }
-
-// .movie-img {
-//   width:100%;
-//   overflow: hidden;
-//   border-top-left-radius: 4px;
-//   border-top-right-radius: 4px;
-// }
+.movie-title {
+  margin-bottom: 1em;
+}

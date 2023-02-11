@@ -1,0 +1,93 @@
+<app-navbar class="navbar"></app-navbar>
+<div class="profile-container">
+
+  <mat-card class="user-info">
+    <mat-card-header class="profile-title">
+      <mat-card-title>Your Profile<br></mat-card-title>
+    </mat-card-header>
+        <mat-card-content>
+
+          <div>
+            <br><b>Username:</b> {{user.Username}}
+          </div>
+
+          <div>
+          <b>Birthday:</b> {{user.Birthday}} <br>
+          <b>Email:</b> {{user.Email}}
+          </div>
+
+        </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-header class="update-info-container">
+      <mat-card-title>Update Your Information</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+
+      <form class="update-form">
+        <mat-form-field>
+          <mat-label class="label">Username</mat-label>
+          <input
+            matInput
+            [(ngModel)]="updateUser.Username"
+            value="{{updateUser.Username}}"
+            placeholder="Username"
+            type="text"
+            name="Username"
+            required
+          >
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label class="label">Password</mat-label>
+          <input
+            matInput
+            [(ngModel)]="updateUser.Password"
+            value="{{updateUser.Password}}"
+            placeholder="Passowrd"
+            type="password"
+            name="Passowrd"
+            required
+          >
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label class="label">Email</mat-label>
+          <input
+            matInput
+            [(ngModel)]="updateUser.Email"
+            placeholder="Email"
+            type="email"
+            name="Email"
+            required
+          >
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label class="label">Birthday</mat-label>
+          <input
+            matInput
+            [(ngModel)]="updateUser.Birthday"
+            value="{{ updateUser.Birthday | date }}"
+            placeholder="Birthday"
+            type="date"
+            name="Birthday"
+          >
+        </mat-form-field>
+      </form>
+
+      <mat-card-actions class="update-button">
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="onUserUpdate()"
+        >
+        <mat-icon>edit</mat-icon>Update profile
+        </button>
+      </mat-card-actions>
+
+
+    </mat-card-content>
+
+  </mat-card>
+
+</div>

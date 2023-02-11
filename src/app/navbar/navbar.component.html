@@ -1,1 +1,18 @@
-<p>navbar works!</p>
+<mat-toolbar class="navbar">
+  <span class="nav-movies" class="nav-item">
+    <a routerLink="/movies">Movies</a>
+  </span>
+
+  <span class="nav-profile" class="nav-item">
+    <a routerLink="/profile">
+      Profile
+    </a>
+  </span>
+
+  <span class="nav-logout" class="nav-item">
+    <a mat-button (click)="logout()" class="logout-button">
+      <mat-icon>logout</mat-icon>
+      <span class="nav-logout__text">Logout</span>
+    </a>
+  </span>
+</mat-toolbar>
