@@ -1,12 +1,12 @@
 <!-- src/app/user-registration-form/user-registration-form.component.html -->
 <mat-card>
-  <mat-card-header>
+  <mat-card-header class="login-text">
     <mat-card-title>Log in!</mat-card-title>
   </mat-card-header>
   
-  <mat-card-content>
+  <mat-card-content class="login-inputs-container">
     <form>
-      <mat-form-field>
+      <mat-form-field class="login-inputs">
         <input
           matInput
           [(ngModel)]="loginData.Username"
@@ -16,7 +16,7 @@
           required
         >
         </mat-form-field>
-        <mat-form-field>
+        <mat-form-field class="login-inputs">
         <input
           matInput
           [(ngModel)]="loginData.Password"
@@ -28,7 +28,8 @@
       </mat-form-field>
     </form>
   </mat-card-content>
-  <mat-card-actions>
+
+  <mat-card-actions class="login-button">
       <button
         mat-raised-button
         (click)="loginUser()"
@@ -37,4 +38,5 @@
         Log in
       </button>
   </mat-card-actions>
+
 </mat-card>

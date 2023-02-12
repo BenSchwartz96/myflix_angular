@@ -1,4 +1,18 @@
-
 .user-info {
-  padding-top: 5em;
+  margin-top: 10em;
+}
+
+.profile-title {
+  font-weight: bold;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.favorite-movies-container {
+  margin: 10px 0;
+  padding: 10px 0;
 }
