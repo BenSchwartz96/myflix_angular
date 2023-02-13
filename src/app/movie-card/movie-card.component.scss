@@ -21,3 +21,18 @@
 .movie-title {
   margin-bottom: 1em;
 }
+
+.details-button {
+  background-color: rgb(73, 189, 27);
+  margin-left: 1em;
+  font-weight: bold;
+}
+
+.button-container {
+  justify-content: center;
+}
+
+.favorite-icon {
+  display: flex;
+  justify-content: flex-end;
+}

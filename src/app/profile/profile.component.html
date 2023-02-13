@@ -23,12 +23,18 @@
   <!-- Favorite movies -->
   <mat-card class="favorite-movies-container">
     <mat-card-header>
-      <mat-card-title>Your Favorite Movies:</mat-card-title>
+      <mat-card-title class="profile-title">Your Favorite Movies:</mat-card-title>
     </mat-card-header>
 
-    <mat-card-content>
-      <br>To be implemented
-    </mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let favMovieId of favMovies">
+        <ng-container *ngFor="let movie of movies">
+          <span *ngIf="movie._id === favMovieId">{{movie.Title}}</span>
+        </ng-container>
+      </mat-list-item>
+    </mat-list>
+
+
 
   </mat-card>
 

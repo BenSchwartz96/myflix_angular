@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 export class ProfileComponent implements OnInit {
 
   user: any={}
+  movies: any={}    //idk if {} is right here
+  favMovies: any={}
 
   @Input() updateUser = { Username: '', Password: '', Email: '', Birthday: '' };
 
@@ -22,6 +24,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUserInfo();
+    this.getMovieIds();
   }
 
 
@@ -33,12 +36,21 @@ export class ProfileComponent implements OnInit {
   getUserInfo(): void {
     this.fetchApiDataService.getUser().subscribe((response: any)=>{
 
-      this.user = {response};
+      this.user={
+        ...response,
+        Birthday: new Date(response.Birthday).toLocaleDateString()
+      };
 
-      console.log("test")
-      console.log(this.user)
+      this.favMovies = response.FavoriteMovies
 
       return this.user;
+    })
+  }
+
+  getMovieIds(): void {
+    this.fetchApiDataService.getAllMovies().subscribe((response: any)=>{
+
+      this.movies = response
     })
   }
 

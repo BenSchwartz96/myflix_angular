@@ -98,7 +98,7 @@ export class FetchApiDataService {
   //
   getUser(): Observable<any> {
     const token = localStorage.getItem('token');
-    const user = localStorage.getItem("user");
+    const user = localStorage.getItem("username");
     return this.http
     .get(`${apiUrl}/users/${user}`, 
     {headers: new HttpHeaders({
@@ -114,7 +114,7 @@ export class FetchApiDataService {
   //
   getFaveMovies(): Observable<any> {
     const token = localStorage.getItem('token');
-    const user = localStorage.getItem("user");
+    const user = localStorage.getItem("username");
     return this.http
     .get(`${apiUrl}/users/${user}`, 
     {headers: new HttpHeaders({
@@ -131,7 +131,7 @@ export class FetchApiDataService {
   //
   addFaveMovie(movieId: string): Observable<any> {
     const token = localStorage.getItem('token');
-    const user = localStorage.getItem("user");
+    const user = localStorage.getItem("username");
     return this.http
     .post(`${apiUrl}/users/${user}/movies/${movieId}`, { FavoriteMovie: movieId }, 
     {headers: new HttpHeaders({
@@ -147,7 +147,7 @@ export class FetchApiDataService {
   //
   removeFaveMovie(movieId: string): Observable<any> {
     const token = localStorage.getItem('token');
-    const user = localStorage.getItem("user");
+    const user = localStorage.getItem("username");
     return this.http
     .delete(`${apiUrl}/users/${user}/movies/${movieId}`, 
     {headers: new HttpHeaders({
@@ -163,7 +163,7 @@ export class FetchApiDataService {
   //
   updateUser(updatedUser: any): Observable<any> {
     const token = localStorage.getItem('token');
-    const user = localStorage.getItem("user");
+    const user = localStorage.getItem("username");
     return this.http
     .put(`${apiUrl}/users/${user}`, updatedUser, 
     {headers: new HttpHeaders({
@@ -179,7 +179,7 @@ export class FetchApiDataService {
   //
   deleteUser(): Observable<any> {
     const token = localStorage.getItem('token');
-    const user = localStorage.getItem("user");
+    const user = localStorage.getItem("username");
     return this.http
     .delete(`${apiUrl}/users/${user}`, 
     {headers: new HttpHeaders({

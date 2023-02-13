@@ -6,8 +6,9 @@
           <!-- <mat-card-subtitle>Directed by: {{movie.Director.Name}}</mat-card-subtitle> -->
       </mat-card-header>
       <img class="movie-img" src={{movie.ImagePath}} alt= {{movie.Title}} />
-      <mat-card-actions>
+      <mat-card-actions class="button-container">
           <button
+              class="details-button"
               mat-button
               color="primary"
               (click)="getGenreDetails(movie.Genre.Name, movie.Genre.Description)"
@@ -15,6 +16,7 @@
               Genre
           </button>
           <button
+              class="details-button"
               mat-button
               color="primary"
               (click)="getDirectorDetails(movie.Director.Name, movie.Director.Bio, movie.Director.Birth)"
@@ -22,13 +24,21 @@
               Director
           </button>
           <button
+              class="details-button"
               mat-button
               color="primary"
               (click)="getMovieDetails(movie.Title, movie.Description)"
           >
               Details
           </button>
-          <!-- <mat-icon>favorite_border</mat-icon> -->
-      </mat-card-actions>
+
+            <mat-icon
+            class="favorite-icon"
+            (click)="toggleFavMovie(movie._id)"
+            >{{favoriteMovies.includes(movie._id) ? 'favorite' : 'favorite_border'}}</mat-icon>
+
+        </mat-card-actions>
   </mat-card>
 </div>
+
+
