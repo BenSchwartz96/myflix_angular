@@ -67,9 +67,9 @@ export class ProfileComponent implements OnInit {
       });
       window.location.reload();
     }, (res) => {
-      console.log(res.errors);
-      this.snackBar.open(res.errors[0].msg, 'OK', {
-        duration: 6000
+      console.log(res); ///////
+      this.snackBar.open(res, "OK", {
+        duration: 6000,
       });
     });
   }
