@@ -17,7 +17,14 @@ export class FetchApiDataService {
 
 
 
- // Making the api call for the user registration endpoint
+  /**
+   * POST to the '/users' endpoint of apiUrl to register a new user
+   * 
+   * @param {any} userDetails 
+   * @returns An Observable, which asynchronously reacts to the response when available. 
+   * The response returns a user object, if resolved, or an error object, if rejected.
+   * @function userRegistration
+   */
   public userRegistration(userDetails: any): Observable<any> {
     console.log(userDetails);
     return this.http
@@ -26,7 +33,16 @@ export class FetchApiDataService {
   }
 
   
-  //
+
+  /**
+   * POST to the '/login' endpoint of apiUrl to log a user in.
+   * They will then be redirected to the movies page. 
+   * 
+   * @param {any} userDetails 
+   * @returns An Observable, which asynchronously reacts to the response when available. 
+   * The response returns a user object, if resolved, or an error object, if rejected.
+   * @function userLogin
+   */
   public userLogin(userDetails: any): Observable<any> {
     console.log(userDetails);
     return this.http
