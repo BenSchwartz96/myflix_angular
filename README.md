@@ -1,6 +1,6 @@
 # MyFlixAngular
-> This is a portfolio project. It's the bones of a website where one could find information about movies, directors, and genres, and register their own favorites.
-> Live demo [_here_](https://benschwartz96.github.io/myflix_angular/welcome).
+This is a portfolio project. It's the bones of a website where one could find information about movies, directors, and genres, and register their own favorites.
+Live demo [_here_](https://benschwartz96.github.io/myflix_angular/welcome).
 
 
 ## General Information
@@ -21,7 +21,7 @@ Project is: _not currently being worked on_. This is because setting up the basi
 Created by Benjamin Schwartz - feel free to contact me at b.m.schwartz92@googlemail.com
 
 
-# MyFlixAngularClient
+# Build Information
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3.
 
