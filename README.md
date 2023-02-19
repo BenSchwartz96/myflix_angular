@@ -12,10 +12,18 @@ Live demo [_here_](https://benschwartz96.github.io/myflix_angular/welcome).
 - Add or remove favorite movies to your profile.
 - Find out, for each movie, who the director was and what the genres are.
 
+## Technologies
+
+- Angular
+- Typescript
+- HTML
+- CSS
+- Javascript, Node.js, Express, MongoDB, and Mongoose for the API
+
+
 
 ## Project Status
-Project is: _not currently being worked on_. This is because setting up the basic functionality and learning the relevant concepts (most notably, React/React Bootstrap for the first version, and Angular for the second) was the central goal of this project. 
-
+Project is: still being worked on. Though setting up basic functionality and learning the relevant concepts (most notably the Angular framework) was the central goal of this project, there are still improvements I'd like to make for the purposes of making this site more appealing for any who might look at it to appraise my work.
 
 ## Contact
 Created by Benjamin Schwartz - feel free to contact me at b.m.schwartz92@googlemail.com
