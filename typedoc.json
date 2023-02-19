@@ -1,0 +1,5 @@
+{
+  "exclude": ["**/*+(index|.spec|.e2e|.module).ts"],
+  "entryPointStrategy": "expand",
+  "entryPoints": ["./src/app"]
+}

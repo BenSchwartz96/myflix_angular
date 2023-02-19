@@ -28,11 +28,12 @@ export class ProfileComponent implements OnInit {
   }
 
 
-  /**
-   * Gets user info, then changes the format of 'Birthday',
-   * then returns object with user information
-   * User info consists of 'Username', 'Email', 'Birthday', 'FavoriteMovies'
-  **/
+ /**
+  * Gets user info, then changes the format of 'Birthday'
+  * User info consists of 'Username', 'Email', 'Birthday', 'FavoriteMovies'
+  * @returns object with user information
+  * @function getUserInfo
+  */
   getUserInfo(): void {
     this.fetchApiDataService.getUser().subscribe((response: any)=>{
 
@@ -55,10 +56,11 @@ export class ProfileComponent implements OnInit {
   }
 
 
-  /**
-   * Update user info
-   * Makes API call to update the user, then resets the localstorage and reloads profile
-   */
+ /**
+  * Update user info
+  * Makes API call to update the user, then resets the localstorage and reloads profile
+  * @function onUserUpdate
+  */
   onUserUpdate(): void {
     this.fetchApiDataService.updateUser(this.updateUser).subscribe((res) => {
       localStorage.setItem('username', res.Username);
@@ -67,7 +69,7 @@ export class ProfileComponent implements OnInit {
       });
       window.location.reload();
     }, (res) => {
-      console.log(res); ///////
+      console.log(res);
       this.snackBar.open(res, "OK", {
         duration: 6000,
       });

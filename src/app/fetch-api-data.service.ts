@@ -18,7 +18,7 @@ export class FetchApiDataService {
 
 
   /**
-   * POST to the '/users' endpoint of apiUrl to register a new user
+   * POST to the '/users' API endpoint to register a new user
    * 
    * @param {any} userDetails 
    * @returns An Observable, which asynchronously reacts to the response when available. 
@@ -35,7 +35,7 @@ export class FetchApiDataService {
   
 
   /**
-   * POST to the '/login' endpoint of apiUrl to log a user in.
+   * POST to the '/login' API endpoint to log a user in.
    * They will then be redirected to the movies page. 
    * 
    * @param {any} userDetails 
@@ -51,7 +51,13 @@ export class FetchApiDataService {
   }
 
 
-  //
+  /**
+   * GET request to the '/movies' endpoint to get full list of movies
+   * 
+   * @returns An Observable, which asynchronously reacts to the response when available. 
+   * The response returns an object holding data of all movies in the DB, if resolved, or an error object, if rejected.
+   * @function getAllMovies
+   */
   getAllMovies(): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http
@@ -66,7 +72,14 @@ export class FetchApiDataService {
   } 
 
 
-  //
+  /**
+   * GET request to the '/movies/[Movie]' endpoint to get data on a specific movie
+   * 
+   * @param {string} title
+   * @returns An Observable, which asynchronously reacts to the response when available. 
+   * The response returns an object holding data of the specified movie, if resolved, or an error object, if rejected.
+   * @function getMovie
+   */
   getMovie(title: string): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http
@@ -81,7 +94,14 @@ export class FetchApiDataService {
   } 
 
 
-  //
+  /**
+   * GET request to the '/movies/directors/[Director]' endpoint to get data on a specific director
+   * 
+   * @param {string} dire_name
+   * @returns An Observable, which asynchronously reacts to the response when available. 
+   * The response returns an object holding data of the specified director, if resolved, or an error object, if rejected.
+   * @function getDirector
+   */
   getDirector(dire_name: string): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http
@@ -96,7 +116,14 @@ export class FetchApiDataService {
   } 
 
 
-  //
+  /**
+   * GET request to the '/movies/genres/[Genre]' endpoint to get data on a specific genre
+   * 
+   * @param {string} genre_name
+   * @returns An Observable, which asynchronously reacts to the response when available. 
+   * The response returns an object holding data of the specified genre, if resolved, or an error object, if rejected.
+   * @function getGenre
+   */
   getGenre(genre_name: string): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http
@@ -111,7 +138,13 @@ export class FetchApiDataService {
   } 
 
 
-  //
+  /**
+   * GET request to the '/users/[User]' endpoint to get data on a specific user
+   * 
+   * @returns An Observable, which asynchronously reacts to the response when available. 
+   * The response returns an object holding data of the specified user, if resolved, or an error object, if rejected.
+   * @function getUser
+   */
   getUser(): Observable<any> {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem("username");
@@ -127,7 +160,13 @@ export class FetchApiDataService {
   } 
 
 
-  //
+  /**
+   * GET request to the '/users/[User]' endpoint to get data on a specific users favorite movies
+   * 
+   * @returns An Observable, which asynchronously reacts to the response when available. 
+   * The response returns an array holding IDs of the users favorite movies, if resolved, or an error object, if rejected.
+   * @function getFaveMovies
+   */
   getFaveMovies(): Observable<any> {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem("username");
@@ -144,7 +183,14 @@ export class FetchApiDataService {
   } 
 
 
-  //
+  /**
+   * POST request to the '/users/[User]/movies/[Movie]' endpoint to add a movie to the users list of favorites
+   * 
+   * @param {string} movieId
+   * @returns An Observable, which asynchronously reacts to the response when available. 
+   * The response returns an object holding the updated user data, if resolved, or an error object, if rejected.
+   * @function addFaveMovie
+   */
   addFaveMovie(movieId: string): Observable<any> {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem("username");
@@ -160,7 +206,14 @@ export class FetchApiDataService {
   } 
 
 
-  //
+  /**
+   * DELETE request to the '/users/[User]/movies/[Movie]' endpoint to remove a movie from the users list of favorites
+   * 
+   * @param {string} movieId
+   * @returns An Observable, which asynchronously reacts to the response when available. 
+   * The response returns an object holding the updated user data, if resolved, or an error object, if rejected.
+   * @function removeFaveMovie
+   */
   removeFaveMovie(movieId: string): Observable<any> {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem("username");
@@ -176,7 +229,14 @@ export class FetchApiDataService {
   } 
 
 
-  //
+  /**
+   * PUT request to the '/users/[User]' endpoint to update user information.
+   * 
+   * @param {any} updatedUser
+   * @returns An Observable, which asynchronously reacts to the response when available. 
+   * The response returns an object holding the updated user data, if resolved, or an error object, if rejected.
+   * @function updateUser
+   */
   updateUser(updatedUser: any): Observable<any> {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem("username");
@@ -192,7 +252,13 @@ export class FetchApiDataService {
   } 
 
 
-  //
+  /**
+   * DELETE request to the '/users/[User]' endpoint to update user information.
+   * 
+   * @returns An Observable, which asynchronously reacts to the response when available. 
+   * The response returns a message from the server acknowledging the deletion of the user object, if resolved, or an error object, if rejected.
+   * @function deleteUser
+   */
   deleteUser(): Observable<any> {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem("username");
@@ -216,6 +282,12 @@ export class FetchApiDataService {
   }
 
 
+ /**
+  * Error handler
+  * 
+  * @param {HttpErrorResponse} error
+  * @returns error message
+  */
 private handleError(error: HttpErrorResponse): any {
     if (error.error instanceof ErrorEvent) {
     console.error('Some error occurred:', error.error.message);

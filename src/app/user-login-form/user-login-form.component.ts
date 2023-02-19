@@ -25,23 +25,29 @@ ngOnInit(): void {
 }
 
 // This is the function responsible for sending the form inputs to the backend
-loginUser(): void {
-    this.fetchApiData.userLogin(this.loginData).subscribe((result) => {
 
-      localStorage.setItem('username', result.user.Username);
-      localStorage.setItem('token', result.token);
-      
-     this.dialogRef.close(); // This will close the modal on success!
-     console.log(result)
-     this.snackBar.open('User logged in', 'OK', {
-        duration: 5000
-     });
-     this.router.navigate(['movies']);        //this points to the moviecard component (route set in app.module.ts)
-    }, (result) => {
-      this.snackBar.open('Unable to log in user', 'OK', {
-        duration: 5000
+
+ /**
+  * Close login dialog and send login form inputs to the backend via API call
+  * @function loginUser
+  */
+  loginUser(): void {
+      this.fetchApiData.userLogin(this.loginData).subscribe((result) => {
+
+        localStorage.setItem('username', result.user.Username);
+        localStorage.setItem('token', result.token);
+        
+      this.dialogRef.close(); // This will close the modal on success!
+      console.log(result)
+      this.snackBar.open('User logged in', 'OK', {
+          duration: 5000
       });
-    });
-  }
+      this.router.navigate(['movies']);        //this points to the moviecard component (route set in app.module.ts)
+      }, (result) => {
+        this.snackBar.open('Unable to log in user', 'OK', {
+          duration: 5000
+        });
+      });
+    }
 
 }

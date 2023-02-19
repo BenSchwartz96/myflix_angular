@@ -33,6 +33,12 @@ export class MovieCardComponent {
 
 
   //Functions to fetch all movies, as well as users favorite movies
+
+ /**
+  * Get all movies via an API call upon initiation and store them in component state
+  * @returns object containing all movies in DB 
+  * @function getMovies
+  */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
         this.movies = resp;
@@ -41,6 +47,11 @@ export class MovieCardComponent {
       });
     }
 
+ /**
+  * Get a users favorite movies via API call upon initiation and store them in component state
+  * @returns array containing IDs of all movies from users Favorite Movies 
+  * @function getFavMovies
+  */
   getFavMovies(): void {
     this.fetchApiData.getUser().subscribe((resp: any)=>{
       this.favoriteMovies=resp.FavoriteMovies;
@@ -49,10 +60,17 @@ export class MovieCardComponent {
   }
 
 
-
+  //
   //Dialog functions
+  //
 
-  //function that opens genre dialog
+ /**
+  * Opens dialog displaying genre details 
+  * 
+  * @param {string} name
+  * @param {string} description
+  * @function getGenreDetails
+  */
   getGenreDetails(name: string, description: string): void {
     this.dialog.open(GenreDetailsComponent, {
       data: {
@@ -62,7 +80,15 @@ export class MovieCardComponent {
     });
   }
 
-  //function that opens director dialog
+
+ /**
+  * Opens dialog displaying director details 
+  * 
+  * @param {string} name
+  * @param {string} bio
+  * @param {number} birth
+  * @function getDirectorDetails
+  */
   getDirectorDetails(name: string, bio: string, birth: number): void {
     this.dialog.open(DirectorDetailsComponent, {
       data: {
@@ -73,7 +99,14 @@ export class MovieCardComponent {
     });
   }
 
-  //function that opens movie details dialog
+
+ /**
+  * Opens dialog displaying genre details 
+  * 
+  * @param {string} name
+  * @param {string} description
+  * @function getMovieDetails
+  */
   getMovieDetails(name: string, description: string): void {
     this.dialog.open(MovieDetailsComponent, {
       data: {
@@ -83,7 +116,12 @@ export class MovieCardComponent {
     });
   }
 
-  //function to add a movie to favorites
+ /**
+  * Adds or removes a movie from the users list of favorite movies via API call
+  * 
+  * @param {string} id
+  * @function toggleFavMovie
+  */
   toggleFavMovie(id: string): void {
 
     if(!this.favoriteMovies.includes(id)) {
