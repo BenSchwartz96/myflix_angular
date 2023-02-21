@@ -19,6 +19,7 @@ Live demo [_here_](https://benschwartz96.github.io/myflix_angular/welcome).
 - HTML
 - CSS
 - Javascript, Node.js, Express, MongoDB, and Mongoose for the API
+- Typedoc
 
 
 
@@ -33,9 +34,12 @@ Created by Benjamin Schwartz - feel free to contact me at b.m.schwartz92@googlem
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3.
 
-## Development server
+## Try it Out
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Clone project & navigate to folder
+- Run `npm install`
+- Run `ng serve` for a dev server. 
+- Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Build
 
