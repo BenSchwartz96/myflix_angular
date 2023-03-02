@@ -22,12 +22,23 @@ Live demo [_here_](https://benschwartz96.github.io/myflix_angular/welcome).
 - Typedoc
 
 
-
 ## Project Status
 Project is: still being worked on. Though setting up basic functionality and learning the relevant concepts (most notably the Angular framework) was the central goal of this project, there are still improvements I'd like to make for the purposes of making this site more appealing for any who might look at it to appraise my work.
 
 ## Contact
 Created by Benjamin Schwartz - feel free to contact me at b.m.schwartz92@googlemail.com
+
+## User Flows
+
+A short series of user flow images I created for this project;
+
+![userflow1](https://github.com/BenSchwartz96/myflix_angular/blob/main/UserFlow1.PNG)
+
+![userflow2](https://github.com/BenSchwartz96/myflix_angular/blob/main/UserFlow2.PNG)
+
+![userflow3](https://github.com/BenSchwartz96/myflix_angular/blob/main/UserFlow3.PNG)
+
+
 
 
 # Build Information
