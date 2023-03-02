@@ -32,11 +32,11 @@ Created by Benjamin Schwartz - feel free to contact me at b.m.schwartz92@googlem
 
 A short series of user flow images I created for this project;
 
-![userflow1](https://github.com/BenSchwartz96/myflix_angular/blob/main/UserFlow1.PNG)
+![userflow1](/images/UserFlow1.PNG)
 
-![userflow2](https://github.com/BenSchwartz96/myflix_angular/blob/main/UserFlow2.PNG)
+![userflow2](/images/UserFlow2.PNG)
 
-![userflow3](https://github.com/BenSchwartz96/myflix_angular/blob/main/UserFlow3.PNG)
+![userflow3](/images/UserFlow3.PNG)
 
 
 
